@@ -1,0 +1,3 @@
+Main-Class: com.oneupsecurity.xxedetector.Main
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
