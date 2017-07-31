@@ -20,18 +20,20 @@ Note log messages are bit messy when instrumentation is occuring. Once done, onl
 
 ~~~
 java  -Xbootclasspath/p:java-agent/dep/asm-all-5.2.jar:java-agent/java-agent.jar -javaagent:java-agent/java-agent.jar -jar java-agent-tester/java-agent-tester.jar
-objc[90154]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin/java (0x10922c4c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1093264e0). One of the two will be used. Which one is undefined.
-Jul 30, 2017 8:15:16 PM com.oneupsecurity.xxedetector.XXEDetectorJavaAgent premain
+objc[90279]: Class JavaLaunchHelper is implemented in both /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/bin/java (0x10117d4c0) and /Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home/jre/lib/libinstrument.dylib (0x1012774e0). One of the two will be used. Which one is undefined.
+Jul 30, 2017 8:31:29 PM com.oneupsecurity.xxedetector.XXEDetectorJavaAgent premain
 INFO: Instrumentor loaded
-Creating secure document builder...
-Jul 30, 2017 8:15:16 PM com.oneupsecurity.xxedetector.XXEDetectorJavaAgent transform
+Jul 30, 2017 8:31:29 PM com.oneupsecurity.xxedetector.Main main
+INFO: Creating secure document builder...
+Jul 30, 2017 8:31:29 PM com.oneupsecurity.xxedetector.XXEDetectorJavaAgent transform
 INFO: Instrumentor com/sun/org/apache/xerces/internal/jaxp/DocumentBuilderFactoryImpl
-Creating insecure document builder...
-Jul 30, 2017 8:15:16 PM com.oneupsecurity.xxedetector.ExceptionLogger LogVuln
+Jul 30, 2017 8:31:29 PM com.oneupsecurity.xxedetector.Main main
+INFO: Creating insecure document builder...
+Jul 30, 2017 8:31:29 PM com.oneupsecurity.xxedetector.ExceptionLogger LogVuln
 WARNING: INSECURE Document Builder created:
     com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl.newDocumentBuilder(DocumentBuilderFactoryImpl.java:75)
-    at com.oneupsecurity.xxedetector.AnotherClass.insecureTest(Main.java:15)
-    at com.oneupsecurity.xxedetector.Main.main(Main.java:33) 
+    at com.oneupsecurity.xxedetector.AnotherClass.insecureTest(Main.java:19)
+    at com.oneupsecurity.xxedetector.Main.main(Main.java:39)
 ~~~
 
 
