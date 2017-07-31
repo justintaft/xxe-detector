@@ -11,11 +11,12 @@ class ClassAdapter extends ClassVisitor implements Opcodes {
     }
 
     @Override
+    /**
+    * @apram name name of function being instrumented
+    */
     public MethodVisitor visitMethod(final int access, final String name,
             final String desc, final String signature, final String[] exceptions) {
 
-        //Name here is the function's name
-        System.out.println("Instrumenting " + name);
         MethodVisitor mv = cv.visitMethod(access, name, desc, signature, exceptions);
         return mv == null ? null : new MethodAdapter(mv).setRealName(name);
     }

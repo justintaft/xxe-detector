@@ -10,10 +10,17 @@ import java.util.*;
 
 
 class AnotherClass {
-   public static void test() throws Exception {
+   public static void insecureTest() throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
     }
+
+   public static void secureTest() throws Exception {
+        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+        dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        DocumentBuilder db = dbf.newDocumentBuilder();
+    }
+
 }
 
 class Main {
@@ -21,15 +28,8 @@ class Main {
     public static void main(String[] args) throws Exception {
         System.out.println("Main app begin2");
 
-        /*
-        DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-
-        System.out.println("DBF Class: " + dbf.getClass());
-        DocumentBuilder db = dbf.newDocumentBuilder();
-        */
-
-        AnotherClass.test();
-        
+        AnotherClass.insecureTest();
+        AnotherClass.secureTest();
     }
     
     public void  myTest() {
