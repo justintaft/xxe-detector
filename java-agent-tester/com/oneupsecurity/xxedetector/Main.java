@@ -7,9 +7,13 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.lang.*;
 import java.util.*;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 
 
 class AnotherClass {
+
    public static void insecureTest() throws Exception {
         DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
         DocumentBuilder db = dbf.newDocumentBuilder();
@@ -25,11 +29,13 @@ class AnotherClass {
 
 class Main {
     
+    public static final Logger LOGGER = Logger.getLogger( Main.class.getName() );
+
     public static void main(String[] args) throws Exception {
-        System.out.println("Creating secure document builder...");
+        LOGGER.log(Level.INFO,"Creating secure document builder...");
         AnotherClass.secureTest();
 
-        System.out.println("Creating insecure document builder...");
+        LOGGER.log(Level.INFO,"Creating insecure document builder...");
         AnotherClass.insecureTest();
     }
     
