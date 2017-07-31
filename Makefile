@@ -17,4 +17,8 @@ build-and-run: java-agent-tester-build
 	# Running main app with instrumnetation
 	java  -Xbootclasspath/p:java-agent/dep/asm-all-5.2.jar -javaagent:java-agent/java-agent.jar -jar java-agent-tester/java-agent-tester.jar
 
+
+patchcode: java-agent/dep/asm-all-5.2.jar
+	cd documentbuilder-patchcode && javac Test.java && java -cp ../java-agent/dep/asm-all-5.2.jar org.objectweb.asm.util.ASMifier Test.class
+
 all: java-agent/dep/asm-all-5.2.jar build-and-run
