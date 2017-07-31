@@ -22,7 +22,7 @@ public class ExceptionLogger {
         
         //Remove our functio calls in the stacktrace 
         stacktrace = stacktrace.substring(107);
-        LOGGER.log(Level.WARNING, "INSECURE Document Builder created:\n\t"  + stacktrace);
+        LOGGER.log(Level.WARNING, "Documentbuilder does not have disallow-doctype-decl set:\n\t"  + stacktrace);
     }
 
 }
