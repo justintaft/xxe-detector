@@ -4,8 +4,6 @@ Currently just checks for feature "http://apache.org/xml/features/disallow-docty
 
 Run `make all` to build and run example.
 
-ASM patchode is based on documentbuilder-patchcode/Test.java. Run `make patchcode` to see patchcode of class.
-
 # Example Of Instrumented Program
 ~~~
 java  -Xbootclasspath/p:java-agent/dep/asm-all-5.2.jar:java-agent/java-agent.jar -javaagent:java-agent/java-agent.jar -jar java-agent-tester/java-agent-tester.jar
@@ -24,6 +22,6 @@ Files under `java-agent-tester` are for a project which creates a document build
 When java-agent-tester is ran without instrumentation, creation of document builders are not shown.
 When java-sgent-tester is ran with instrumentation, creation of document builders is shown.
 
-
+ASM patchode is based on documentbuilder-patchcode/Test.java. Run `make patchcode` to see patchcode of class.
 
 
