@@ -26,10 +26,11 @@ class AnotherClass {
 class Main {
     
     public static void main(String[] args) throws Exception {
-        System.out.println("Main app begin2");
-
-        AnotherClass.insecureTest();
+        System.out.println("Creating secure document builder...");
         AnotherClass.secureTest();
+
+        System.out.println("Creating insecure document builder...");
+        AnotherClass.insecureTest();
     }
     
     public void  myTest() {

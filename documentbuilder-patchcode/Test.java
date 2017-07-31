@@ -1,3 +1,14 @@
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
+
+class LoggerClass {
+    public static final Logger LOGGER = Logger.getLogger( LoggerClass.class.getName() );
+    public static void LogException() {
+        new Exception();
+    }
+}
+
 class Test {
     public boolean getFeature(String feature) {
         return true;
@@ -5,10 +16,10 @@ class Test {
 
     public void thing() {
         if(!this.getFeature("http://apache.org/xml/features/disallow-doctype-decl")) {
-            System.out.println("Insecure!");
-            new Exception().printStackTrace(System.out);
+            LoggerClass.LogException();
         }
         System.out.println("What!");
+
         
     }
 }

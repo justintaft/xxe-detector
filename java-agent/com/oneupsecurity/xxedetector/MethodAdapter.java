@@ -45,14 +45,8 @@ class MethodAdapter extends MethodVisitor implements Opcodes {
             mv.visitMethodInsn(INVOKEVIRTUAL, "com/sun/org/apache/xerces/internal/jaxp/DocumentBuilderFactoryImpl", "getFeature", "(Ljava/lang/String;)Z", false);
             Label l0 = new Label();
             mv.visitJumpInsn(IFNE, l0);
-            mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
-            mv.visitLdcInsn("Insecure Document Builder Created! Stack trace where document builder was created:");
-            mv.visitMethodInsn(INVOKEVIRTUAL, "java/io/PrintStream", "println", "(Ljava/lang/String;)V", false);
-            mv.visitTypeInsn(NEW, "java/lang/Exception");
-            mv.visitInsn(DUP);
-            mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Exception", "<init>", "()V", false);
-            mv.visitFieldInsn(GETSTATIC, "java/lang/System", "out", "Ljava/io/PrintStream;");
-            mv.visitMethodInsn(INVOKEVIRTUAL, "java/lang/Exception", "printStackTrace", "(Ljava/io/PrintStream;)V", false);
+
+            mv.visitMethodInsn(INVOKESTATIC, "com/oneupsecurity/xxedetector/ExceptionLogger", "LogVuln", "()V", false);
             mv.visitLabel(l0);
             mv.visitFrame(Opcodes.F_SAME, 0, null, 0, null);
         }

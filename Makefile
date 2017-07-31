@@ -15,7 +15,7 @@ build-and-run: java-agent-tester-build
 	java -jar java-agent-tester/java-agent-tester.jar
 
 	# Running main app with instrumnetation
-	java  -Xbootclasspath/p:java-agent/dep/asm-all-5.2.jar -javaagent:java-agent/java-agent.jar -jar java-agent-tester/java-agent-tester.jar
+	java  -Xbootclasspath/p:java-agent/dep/asm-all-5.2.jar:java-agent/java-agent.jar -javaagent:java-agent/java-agent.jar -jar java-agent-tester/java-agent-tester.jar
 
 
 patchcode: java-agent/dep/asm-all-5.2.jar
