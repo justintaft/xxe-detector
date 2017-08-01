@@ -1,4 +1,0 @@
-Manifest-Version: 1.0
-Premain-Class: com.oneupsecurity.xxedetector.XXEDetectorJavaAgent
-Created-By: 1.8.0_121 (Oracle Corporation)
-
